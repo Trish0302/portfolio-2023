@@ -7,9 +7,19 @@ navItem.click((e) => {
     $(e.target).addClass("active-link");
 });
 
-const toggleItem = $(".nav__toggle");
+const openNavItem = $(".nav__toggle");
 const navMenu = $(".nav__menu");
+const overlay = $(".overlay");
+const closeNavItem = $(".nav__close");
 
-toggleItem.on("click", () => {
-    navMenu.toggleClass("nav__menu-show");
+openNavItem.on("click", () => {
+    navMenu.addClass("nav__menu-show");
+    closeNavItem.addClass("nav__close-show");
+    overlay.css("display", "block");
+});
+
+closeNavItem.on("click", () => {
+    navMenu.removeClass("nav__menu-show");
+    closeNavItem.removeClass("nav__close-show");
+    overlay.css("display", "none");
 });
