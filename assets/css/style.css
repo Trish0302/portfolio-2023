@@ -289,7 +289,7 @@ section {
 
     .nav__menu {
         position: fixed;
-        top: 40rem;
+        top: 100rem;
         right: 50%;
         transform: translate(50%, -50%);
         margin: auto 0;
