@@ -320,6 +320,11 @@ section {
         color: #dad7cd;
     }
 
+    .nav__link.active-link {
+        font-weight: normal;
+        text-decoration: underline;
+    }
+
     .nav__toggle {
         display: flex;
         align-items: center;

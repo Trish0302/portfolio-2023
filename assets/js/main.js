@@ -5,6 +5,7 @@ navItem.click((e) => {
         $(element).children().removeClass("active-link");
     });
     $(e.target).addClass("active-link");
+    closeNavItem.click();
 });
 
 const openNavItem = $(".nav__toggle");
