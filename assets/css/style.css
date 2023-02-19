@@ -21,7 +21,6 @@ a {
 body {
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
-    max-width: 1200px;
     margin: 0 auto;
     padding: 0 3rem;
     background-color: #dad7cd;
@@ -40,19 +39,19 @@ section {
     text-align: center;
     text-transform: uppercase;
     font-size: 4rem;
-    font-family: "EB Garamond", serif;
+    /* font-family: "EB Garamond", serif; */
     color: transparent;
     font-weight: 600;
-    -webkit-text-stroke: 1.25px #344e41;
+    -webkit-text-stroke: 1.5px #344e41;
 }
 
 .section__subtitle {
     text-align: center;
-    font-size: 0.9rem;
     color: #7e956e;
     font-weight: 500;
-    filter: blur(0.1px);
+    text-transform: uppercase;
     margin-bottom: 2rem;
+    font-family: "EB Garamond", serif;
 }
 
 .btn {
@@ -104,7 +103,7 @@ section {
 }
 
 .nav__menu {
-    transition: all 0.75s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .nav__list {
@@ -261,22 +260,34 @@ section {
 }
 
 @media screen and (max-width: 800px) {
+    body {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
     .nav__menu {
-        position: absolute;
-        top: 0rem;
-        right: -120%;
+        position: fixed;
+        top: 5.5rem;
+        right: 100rem;
+        margin: auto 0;
+        transform: translateX(50%);
         display: flex;
         flex-direction: column;
         background-color: #344e41;
-        width: 100%;
-        height: 100vh;
+        height: 20rem;
+        width: 80vw;
         justify-content: center;
         align-items: center;
         z-index: 100;
+        border-radius: 2rem;
     }
 
     .nav__menu-show {
-        right: 0;
+        right: 50%;
+    }
+
+    .nav__menu-show nav {
+        background-color: red !important;
     }
 
     .nav__list {
@@ -296,13 +307,8 @@ section {
     }
 
     .nav__buttons {
-        position: absolute;
-        top: 0rem;
-        right: 1.5rem;
-        background-color: #dad7cd;
         padding: 1rem;
-        margin-top: 1.5rem;
-        margin-right: 0.5rem;
+        background-color: #dad7cd;
         border-radius: 3rem;
         z-index: 100;
     }
