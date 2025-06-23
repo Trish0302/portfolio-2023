@@ -1,120 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PORTFOLIO</title>
-        <!-- remix icon -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
-            rel="stylesheet"
-        />
-        <!-- style.css -->
-        <link rel="stylesheet" href="assets/css/style.css" />
-    </head>
-    <body>
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav__logo">Trish Lee</a>
-                <div class="nav__menu" id="nav-menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link active-link">
-                                Home
-                            </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link"> About </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#services" class="nav__link"> Services </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#projects" class="nav__link"> Projects </a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contact" class="nav__link"> Contact </a>
-                        </li>
-                    </ul>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" id="nav__logo">Trish Lee</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link"> Home </a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link"> About </a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link"> Services </a>
+            </li>
+            <li class="nav__item">
+              <a href="#projects" class="nav__link"> Projects </a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link"> Contact </a>
+            </li>
+          </ul>
+        </div>
 
-                <div class="overlay"></div>
+        <div class="overlay"></div>
 
-                <div class="nav__buttons">
-                    <i class="ri-moon-line change-theme" id="theme-button"></i>
+        <div class="nav__buttons">
+          <i class="ri-moon-line change-theme" id="theme-button"></i>
 
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="ri-menu-2-line"></i>
-                    </div>
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-2-line"></i>
+          </div>
 
-                    <div class="nav__close"><i class="ri-close-line"></i></div>
-                </div>
-            </nav>
-        </header>
+          <div class="nav__close"><i class="ri-close-line"></i></div>
+        </div>
+      </nav>
+    </header>
 
-        <section class="home" id="home">
-            <div class="container home__container">
-                <div class="home__content">
-                    <p class="home__content-title">
-                        Full-stack Developer & TOEIC Trainer
-                    </p>
-                    <h1 class="home__content-name">Le Nguyen Minh Tri</h1>
-
-                    <span class="home__content-description"
-                        >I have been pursuing Computer Sience studies in Ton Duc
-                        Thang University and still have the ambition to grow my
-                        own career in programming domain, especially in software
-                        development. I'm currently educating myself about
-                        ReactJS and NodeJS to realize the dream of being a
-                        full-stack developer.
-                    </span>
-                    <div class="home__socials">
-                        <div class="home__socials-icon">
-                            <i class="ri-github-fill"></i>
-                        </div>
-                        <div class="home__socials-icon">
-                            <i class="ri-linkedin-box-fill"></i>
-                        </div>
-                        <div class="home__socials-icon">
-                            <i class="ri-facebook-circle-fill"></i>
-                        </div>
-                    </div>
-                    <div class="home_buttons">
-                        <button class="btn">Download my CV</button>
-                        <button class="btn btn-primary">
-                            Wanna have a sip?
-                        </button>
-                    </div>
-                </div>
-                <div class="home__img">
-                    <img
-                        src="assets/img/avatar-removebg-preview-s.png"
-                        alt=""
-                    />
-                </div>
+    <section class="home" id="home">
+      <div class="container home__container">
+        <div class="home__content">
+          <div class="home__content_job_tags text-uppercase">
+            <p>stem educator</p>
+            <p>software developer</p>
+          </div>
+          <h1 class="home__content-name">Lê Nguyên Minh Trí</h1>
+          <span class="home__content-description"
+            >I'm an IT educator and software engineer passionate about
+            empowering others through technology education. With experience
+            teaching students from children to adults, I apply modern,
+            learner-centered approaches to make complex concepts accessible and
+            engaging. I'm dedicated to creating meaningful learning experiences
+            that inspire curiosity and practical skills for the digital world.
+          </span>
+          <div class="home__socials">
+            <div class="home__socials-icon">
+              <i class="ri-github-fill"></i>
             </div>
-        </section>
-
-        <!-- ABOUT ME -->
-        <section class="about" id="about">
-            <h2 class="section__title">about me</h2>
-            <p class="section__subtitle">a quick glance at me</p>
-            <div class="about__container">
-                <div class="about_img">about_img</div>
-                <div class="about_content">about_content</div>
+            <div class="home__socials-icon">
+              <i class="ri-linkedin-box-fill"></i>
             </div>
-        </section>
+            <div class="home__socials-icon">
+              <i class="ri-facebook-circle-fill"></i>
+            </div>
+          </div>
+          <div class="home_buttons">
+            <button class="btn">Download my CV</button>
+            <button class="btn btn-primary">Wanna have a sip?</button>
+          </div>
+        </div>
+        <div class="home__img">
+          <img src="assets/img/avatar.JPG" alt="" />
+        </div>
+      </div>
+    </section>
 
-        <!-- jQuery -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
-            integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
+    <!-- ABOUT ME -->
+    <section class="about" id="about">
+      <h2 class="section__title">about me</h2>
+      <p class="section__subtitle">a quick glance at me</p>
+      <div class="about__container">
+        <div class="about_img">about_img</div>
+        <div class="about_content">about_content</div>
+      </div>
+    </section>
 
-        <!-- main.js -->
-        <script src="assets/js/main.js"></script>
-    </body>
+    <!-- jQuery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- main.js -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
