@@ -1,11 +1,30 @@
+const body = $("body");
+const themeToggle = $(".nav__buttons > i");
+
+const header = $("header");
+
 const navItem = $(".nav__item");
 const openNavItem = $(".nav__toggle");
 const closeNavItem = $(".nav__close");
-
 const navMenu = $(".nav__menu");
+const navToggle = $(".nav__toggle");
+const navToggleIcon = $(".nav__toggle > i");
+
 const overlay = $(".overlay");
 
 const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+window.onscroll = () => {
+  if (window.scrollY > 0 && !mediaQuery.matches) {
+    header.addClass("header--scrolled");
+  } else {
+    header.removeClass("header--scrolled");
+  }
+
+  navToggle
+    .addClass(window.scrollY > 0 ? "nav_dark-text" : "nav_light-text")
+    .removeClass(window.scrollY > 0 ? "nav_light-text" : "nav_dark-text");
+};
 
 toggleNavigation = (show) => {
   navMenu.toggleClass("nav__menu-show", show);
@@ -40,6 +59,10 @@ callResponsiveNavItem = async (element) => {
 navItem.click((e) => {
   navMenu.find("a.nav__link").removeClass("active-link");
   callResponsiveNavItem(e.target);
+});
+
+themeToggle.click(() => {
+  body.toggleClass("dark-theme");
 });
 
 openNavItem.on("click", () => toggleNavigation(true));
