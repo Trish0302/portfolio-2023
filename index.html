@@ -9,96 +9,237 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-  <body>
-    <header class="header" id="header">
-      <nav class="nav container">
-        <a href="#" id="nav__logo">Trish Lee</a>
-        <div class="nav__menu" id="nav-menu">
+  <body class="overflow-x-hidden">
+    <header class="header content-center relative" id="header">
+      <nav class="nav flex justify-between items-center">
+        <a href="#" id="nav__logo" class="z-300">Trish Lee</a>
+        <div class="nav__menu hidden" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link active-link"> Home </a>
+              <a href="#home" class="nav__link active-link" data-id="0">
+                home
+              </a>
             </li>
             <li class="nav__item">
-              <a href="#about" class="nav__link"> About </a>
+              <a href="#experience" class="nav__link" data-id="1">
+                experience
+              </a>
             </li>
             <li class="nav__item">
-              <a href="#services" class="nav__link"> Services </a>
+              <a href="#services" class="nav__link" data-id="2"> education </a>
             </li>
             <li class="nav__item">
-              <a href="#projects" class="nav__link"> Projects </a>
+              <a href="#projects" class="nav__link" data-id="3"> projects </a>
             </li>
             <li class="nav__item">
-              <a href="#contact" class="nav__link"> Contact </a>
+              <a href="#contact" class="nav__link" data-id="4"> contact </a>
             </li>
-            <div class="nav__close nav__close-show">
-              <i class="ri-close-line"></i>
-            </div>
           </ul>
         </div>
 
-        <div class="overlay"></div>
-
-        <div class="nav__buttons">
+        <div class="nav__buttons z-300">
           <i class="ri-moon-line change-theme" id="theme-button"></i>
 
           <div class="nav__toggle" id="nav-toggle">
             <i class="ri-menu-2-line"></i>
           </div>
+
+          <div class="nav__close hidden">
+            <i class="ri-close-line"></i>
+          </div>
         </div>
       </nav>
     </header>
 
-    <section class="home" id="home">
-      <div class="container home__container">
-        <div class="home__content">
-          <div class="home__content_job_tags text-uppercase">
-            <p>stem educator</p>
-            <p>software developer</p>
-          </div>
-          <h1 class="home__content-name">Lê Nguyên Minh Trí</h1>
-          <span class="home__content-description"
-            >I'm an IT educator and software engineer passionate about
-            empowering others through technology education. With experience
-            teaching students from children to adults, I apply modern,
-            learner-centered approaches to make complex concepts accessible and
-            engaging. I'm dedicated to creating meaningful learning experiences
-            that inspire curiosity and practical skills for the digital world.
-          </span>
-          <div class="home__socials">
-            <div class="home__socials-icon">
-              <i class="ri-github-fill"></i>
+    <section class="home absolute top-0">
+      <div class="home__container !h-full">
+        <div class="relative w-full !h-full">
+          <div class="swiper default-carousel swiper-container h-full relative">
+            <div class="swiper-wrapper !p-0 !h-full">
+              <div class="swiper-slide px-10! py-25!" id="swiper-slide__1">
+                <div class="h-full! flex justify-between flex-row">
+                  <div
+                    class="h-full! w-full flex flex-row justify-between flex-wrap gap-3"
+                  >
+                    <div class="md:basis-2/5">
+                      <div class="home__content_job_tags text-uppercase mb-5!">
+                        <p>stem educator</p>
+                        <p>software developer</p>
+                      </div>
+                      <h1 class="home__content-name">Lê Nguyên Minh Trí</h1>
+                    </div>
+
+                    <div class="w-full md:basis-1/5">
+                      <div
+                        class="home__socials flex justify-center md:flex-col gap-4 mb-7!"
+                      >
+                        <div
+                          class="home__socials-icon flex flex-row items-center justify-start md:justify-end gap-2"
+                        >
+                          <span class="hidden md:block">Github</span>
+                          <i class="ri-github-fill"></i>
+                        </div>
+                        <div
+                          class="home__socials-icon flex flex-row items-center justify-start md:justify-end gap-2"
+                        >
+                          <span class="hidden md:block">LinkedIn</span>
+                          <i class="ri-linkedin-box-fill"></i>
+                        </div>
+                        <div
+                          class="home__socials-icon flex flex-row items-center justify-start md:justify-end gap-2"
+                        >
+                          <span class="hidden md:block">Facebook</span>
+                          <i class="ri-facebook-circle-fill"></i>
+                        </div>
+                      </div>
+                      <div class="home_buttons flex flex-col gap-3">
+                        <button class="btn">Download my CV</button>
+                        <button class="btn">Wanna have a sip?</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <img
+                  src="assets/img/IMG_1275.JPG"
+                  class="swiper-slide_bg absolute top-0 overflow-x-hidden"
+                  alt=""
+                /> -->
+              </div>
+              <div class="swiper-slide px-10! py-25!">
+                <section class="experience">
+                  <h2 class="section__title text-left">experience</h2>
+                  <p class="section__subtitle text-left">
+                    a quick glance at me
+                  </p>
+                  <div class="experience__container">
+                    <div class="experience__wrapper">
+                      <div class="experience_content_experience">
+                        <ul id="progress">
+                          <li>
+                            <div class="node">
+                              <img src="image.png" width="40px" />
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                          </li>
+                          <li>
+                            <div class="node">
+                              <img src="image.png" width="40px" />
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                          </li>
+                          <li>
+                            <div class="node">
+                              <img src="image.png" width="40px" />
+                            </div>
+                            <p>Lorem ipsum dolor sit amet.</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="swiper-slide px-10! py-25!">
+                <div class="h-100 flex justify-center items-start">
+                  <section class="education">
+                    <h2 class="section__title text-left">education</h2>
+                    <p class="section__subtitle text-left">
+                      a quick glance at me
+                    </p>
+                    <div class="education__container">
+                      <div class="education__wrapper">
+                        <div class="education_content_education">
+                          <div>
+                            <p class="education_content_title">education</p>
+                            <span>Lorem ipsum dolor sit amet.</span>
+                          </div>
+
+                          <div>
+                            <p class="education_content_title">languages</p>
+                            <span>Lorem ipsum dolor sit amet.</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <div class="swiper-slide px-10! py-25!">
+                <div class="h-100 flex justify-center items-start">
+                  <section class="projects">
+                    <h2 class="section__title text-left">projects</h2>
+                    <p class="section__subtitle text-left">
+                      a quick glance at me
+                    </p>
+                    <div class="projects__container">
+                      <div class="projects__wrapper">
+                        <div class="projects_content_projects">
+                          <div>
+                            <p class="projects_content_title">projects</p>
+                            <span>Lorem ipsum dolor sit amet.</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <div class="swiper-slide px-10! py-25!">
+                <div class="h-100 flex justify-center items-start">
+                  <section class="contact">
+                    <h2 class="section__title text-left">contact</h2>
+                    <p class="section__subtitle text-left">
+                      a quick glance at me
+                    </p>
+                    <div class="contact__container">
+                      <div class="contact__wrapper">
+                        <div class="contact_content_contact">
+                          <div>
+                            <p class="contact_content_title">contact</p>
+                            <span>Lorem ipsum dolor sit amet.</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
             </div>
-            <div class="home__socials-icon">
-              <i class="ri-linkedin-box-fill"></i>
+            <div
+              class="flex items-center gap-8 lg:justify-start justify-center absolute z-100! w-full bottom-5 h-10"
+            >
+              <button
+                id="slider-button-left"
+                class="swiper-button-prev group flex justify-center items-center border border-solid border-indigo-600 !w-5 !h-5 transition-all duration-500 rounded-full !top-full !left-5 after:!text-sm"
+                data-carousel-prev
+              ></button>
+              <button
+                id="slider-button-right"
+                class="swiper-button-next group flex justify-center items-center border border-solid border-indigo-600 !w-5 !h-5 transition-all duration-500 rounded-full !top-full !right-5 after:!text-sm"
+                data-carousel-next
+              ></button>
             </div>
-            <div class="home__socials-icon">
-              <i class="ri-facebook-circle-fill"></i>
-            </div>
+            <div
+              class="swiper-pagination flex items-center justify-center gap-10 !p-5 !w-50 m-auto! left-0! right-0! z-500!"
+            ></div>
+            <!-- <img
+              src="assets/img/Untitled design.png"
+              class="swiper-slide_bg absolute top-0! overflow-x-hidden"
+              alt=""
+            /> -->
           </div>
-          <div class="home_buttons">
-            <button class="btn">Download my CV</button>
-            <button class="btn btn-primary">Wanna have a sip?</button>
-          </div>
-        </div>
-        <div class="home__img">
-          <img src="assets/img/avatar.JPG" alt="" />
         </div>
       </div>
     </section>
 
-    <!-- ABOUT ME -->
-    <section class="about" id="about">
-      <h2 class="section__title">about me</h2>
-      <p class="section__subtitle">a quick glance at me</p>
-      <div class="about__container">
-        <div class="about_img">about_img</div>
-        <div class="about_content">about_content</div>
-      </div>
-    </section>
-
-    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
       integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
@@ -106,7 +247,6 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <!-- main.js -->
     <script src="assets/js/main.js"></script>
   </body>
 </html>
