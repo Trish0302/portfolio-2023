@@ -3,14 +3,12 @@ const themeToggle = $(".nav__buttons > i");
 
 const header = $("header");
 
-const navItem = $(".nav__item");
+const navItem = $("ul.nav__list > li.nav__item");
 const openNavItem = $(".nav__toggle");
-const closeNavItem = $(".nav__close");
+const navClose = $(".nav__close");
 const navMenu = $(".nav__menu");
 const navToggle = $(".nav__toggle");
 const navToggleIcon = $(".nav__toggle > i");
-
-const overlay = $(".overlay");
 
 const mediaQuery = window.matchMedia("(min-width: 768px)");
 
@@ -28,37 +26,20 @@ window.onscroll = () => {
 
 toggleNavigation = (show) => {
   navMenu.toggleClass("nav__menu-show", show);
-  closeNavItem.toggleClass("nav__close-show", show);
-  overlay.toggleClass("show", show);
-};
-
-resolveResponsiveNavItem = (element) => {
-  return new Promise((resolve) => {
-    setTimeout(
-      () => {
-        console.log(456);
-        $(element).toggleClass("active-link");
-        resolve(element);
-      },
-      mediaQuery.matches ? 0 : 850
-    );
-  });
-};
-
-callResponsiveNavItem = async (element) => {
-  console.log(123);
-
-  await resolveResponsiveNavItem(element);
-
-  console.log(789);
-
-  navMenu.toggleClass("nav__menu-show");
-  overlay.toggleClass("show");
+  navMenu.toggleClass("hidden");
+  navClose.toggleClass("hidden");
+  navToggle.toggleClass("hidden");
 };
 
 navItem.click((e) => {
   navMenu.find("a.nav__link").removeClass("active-link");
-  callResponsiveNavItem(e.target);
+
+  e.target.classList.add("active-link");
+
+  // $(this).addClass("active-link");
+
+  toggleNavigation(false);
+  swiper.slideTo(e.target.getAttribute("data-id"), 1300);
 });
 
 themeToggle.click(() => {
@@ -66,4 +47,22 @@ themeToggle.click(() => {
 });
 
 openNavItem.on("click", () => toggleNavigation(true));
-closeNavItem.on("click", () => toggleNavigation(false));
+navClose.on("click", () => toggleNavigation(false));
+
+var swiper = new Swiper(".default-carousel", {
+  loop: false,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  noSwipingClass: "swiper-slide_bg",
+  // ,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
+});
