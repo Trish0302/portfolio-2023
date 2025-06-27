@@ -25,7 +25,7 @@
   font-style: normal;
 }
 
-:root {
+.dark-theme {
   --body-bg: #eae3d1;
   --text: #324b44;
   --card-bg: #324b44;
@@ -37,7 +37,7 @@
   --overlay-opacity: 0.85;
 }
 
-.dark-theme {
+:root {
   --body-bg: #324b44;
   --text: #eae3d1;
   --card-bg: #eae3d1;
@@ -71,6 +71,7 @@ body {
   margin: 0 auto;
   word-spacing: 1rem;
   transition: all 1s ease-in-out;
+  background-color: var(--body-bg);
 }
 
 section {
@@ -119,6 +120,7 @@ section {
   position: absolute;
   transform: translate(-50%, 0);
   height: auto;
+  width: 100%;
   max-width: 1500px;
   overflow-x: hidden;
 }
@@ -131,8 +133,15 @@ section {
   font-family: "Fagun Light";
   font-size: 3rem;
   font-weight: normal;
+  text-transform: uppercase;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px var(--text);
+  opacity: 0;
+}
+
+.swiper-slide-active .section__title.content-animation {
+  opacity: 1;
+  animation: activeText 1.5s ease-in-out !important;
 }
 
 .section__subtitle {
@@ -191,16 +200,15 @@ section {
   align-items: center;
   z-index: 0;
   display: none;
-  transition: all 0.2s ease-in-out;
 }
 
 .nav__menu-show {
   display: flex;
-  animation: fadeIn 1.2s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .nav__menu.hidden {
-  animation: fadeOut 1.2s ease-in-out;
+  animation: fadeOut 2.5s ease-in-out;
 }
 
 .nav__list {
@@ -210,21 +218,17 @@ section {
   row-gap: 2rem;
 }
 
-.nav__link {
-  color: black;
-}
-
-.nav__link.active-link {
-  font-weight: normal;
-  text-decoration: underline;
-}
-
 .nav__buttons {
   border-radius: 3rem;
 }
 
 .nav__toggle {
   align-items: center;
+  cursor: pointer;
+}
+
+.nav__close {
+  cursor: pointer;
 }
 
 .nav__close-show {
@@ -234,23 +238,6 @@ section {
   right: 0.75rem;
 }
 
-.overlay {
-  visibility: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--body-bg);
-  opacity: var(--overlay-opacity);
-  z-index: 80;
-  transition: all 0.2s ease-in-out;
-}
-
-.overlay.show {
-  visibility: visible;
-}
-
 .nav__list {
   display: flex;
   column-gap: 3rem;
@@ -258,12 +245,26 @@ section {
 
 .nav__item {
   position: relative;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 1.5s ease-out;
+  color: red;
+}
+
+.nav__item.showNavItem {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .nav__link {
   transition: all 0.35s ease-in-out;
-  color: var(--text);
+  color: var(--body-bg);
   font-size: 0.95rem;
+}
+
+.nav__link.active-link {
+  font-weight: normal;
+  text-decoration: underline;
 }
 
 .active-link {
@@ -316,6 +317,30 @@ section {
   row-gap: 1rem;
 }
 
+.swiper-slide {
+  opacity: 0;
+  transform: translate(0) !important;
+  padding: 0 2.5rem;
+}
+
+.swiper-slide-active {
+  transition: all 2s ease;
+  transition-delay: 300ms;
+  opacity: 1;
+}
+
+button#slider-button-left {
+  left: 2.5rem;
+}
+
+button#slider-button-right {
+  right: 2.5rem;
+}
+
+.home__title {
+  background: red;
+}
+
 .home__content_job_tags {
   display: flex;
   flex-wrap: wrap;
@@ -334,7 +359,7 @@ section {
 }
 
 .home__content-name {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
   text-transform: uppercase;
   font-family: "Romans Story";
   color: var(--text);
@@ -513,6 +538,18 @@ ul#progress > li > p {
     color: var(--card-text);
   }
 
+  .swiper-slide {
+    padding: 0 1rem;
+  }
+
+  button#slider-button-left {
+    left: 1rem !important;
+  }
+
+  button#slider-button-right {
+    right: 1rem !important;
+  }
+
   .home {
     padding-top: 0;
   }
@@ -595,5 +632,35 @@ ul#progress > li > p {
   to {
     opacity: 0;
     display: none;
+  }
+}
+
+@keyframes activeText {
+  0% {
+    transform: translate3d(-30px, 0px, 0px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInOut {
+  0% {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(30px);
+    /* opacity: 0 ;
+    visibility: hidden; */
+    /* transform: translateY(0); */
+  }
+  50% {
+    opacity: 0.5 !important;
+    /* visibility: visible; */
+  }
+  100% {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0);
   }
 }
