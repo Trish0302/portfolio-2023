@@ -12,6 +12,29 @@ const navToggleIcon = $(".nav__toggle > i");
 
 const mediaQuery = window.matchMedia("(min-width: 768px)");
 
+var swiper = new Swiper(".default-carousel", {
+  loop: false,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  noSwipingClass: "swiper-slide_bg",
+  speed: "300",
+  // ,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
+});
+
+swiper.on("slideChangeTransitionEnd", () => {
+  $(".swiper-slide-active .section__title").addClass("content-animation");
+});
+
 window.onscroll = () => {
   if (window.scrollY > 0 && !mediaQuery.matches) {
     header.addClass("header--scrolled");
@@ -29,17 +52,21 @@ toggleNavigation = (show) => {
   navMenu.toggleClass("hidden");
   navClose.toggleClass("hidden");
   navToggle.toggleClass("hidden");
+  navItem.removeClass("showNavItem");
 };
+
+navMenu.on("animationend", function (e) {
+  if (e.target === navMenu[0]) {
+    console.log(123);
+    navItem.toggleClass("showNavItem");
+  }
+});
 
 navItem.click((e) => {
   navMenu.find("a.nav__link").removeClass("active-link");
-
   e.target.classList.add("active-link");
-
-  // $(this).addClass("active-link");
-
   toggleNavigation(false);
-  swiper.slideTo(e.target.getAttribute("data-id"), 1300);
+  swiper.slideTo(e.target.getAttribute("data-id"));
 });
 
 themeToggle.click(() => {
@@ -48,21 +75,3 @@ themeToggle.click(() => {
 
 openNavItem.on("click", () => toggleNavigation(true));
 navClose.on("click", () => toggleNavigation(false));
-
-var swiper = new Swiper(".default-carousel", {
-  loop: false,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  noSwipingClass: "swiper-slide_bg",
-  // ,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  // },
-});
