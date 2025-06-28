@@ -10,6 +10,9 @@ const navMenu = $(".nav__menu");
 const navToggle = $(".nav__toggle");
 const navToggleIcon = $(".nav__toggle > i");
 
+const swiperNextButton = $(".swiper-button-next");
+const swiperPrevButton = $(".swiper-button-prev");
+
 const mediaQuery = window.matchMedia("(min-width: 768px)");
 
 var swiper = new Swiper(".default-carousel", {
@@ -19,11 +22,12 @@ var swiper = new Swiper(".default-carousel", {
     clickable: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: "",
+    prevEl: "",
   },
   noSwipingClass: "swiper-slide_bg",
   speed: "300",
+  autoplay: false,
   // ,
   // autoplay: {
   //   delay: 5000,
@@ -35,13 +39,69 @@ swiper.on("slideChangeTransitionEnd", () => {
   $(".swiper-slide-active .section__title").addClass("content-animation");
 });
 
-window.onscroll = () => {
-  if (window.scrollY > 0 && !mediaQuery.matches) {
-    header.addClass("header--scrolled");
-  } else {
-    header.removeClass("header--scrolled");
-  }
+// Add event to next button
+$(".swiper-button-next.enabled").click(function () {
+  // Disable swiper buttons so user doesnt click again
+  // $(".swiper-button").removeClass("enabled");
+  // // Set timeout for next slide move
+  // setTimeout(function () {
+  //   // Move to next slide
+  //   swiper.slideNext();
+  //   // Re-enable swiper buttons
+  //   $(".swiper-button").addClass("enabled");
+  // }, swiperDelay);
+});
 
+swiper.on("slideChangeTransitionStart", () => {
+  // $(".swiper-slide-active .section__title").addClass("slide_out");
+  // console.log(swiper.activeIndex);
+});
+
+async function delayWithLog(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      // console.log(swiper.activeIndex);
+      console.log(123);
+
+      resolve(); // Only now continue to slideNext
+    }, ms);
+  });
+}
+
+// swiperNextButton.click(async (e) => {
+//   console.log(123);
+//   $(".swiper-slide-active .section__title").addClass("slide_out");
+
+//   setTimeout(() => {
+//     $(".swiper-slide-active .section__title").removeClass("slide_out");
+//     swiper.slideNext();
+//   }, 750);
+// });
+
+// swiperPrevButton.click(() => {
+//   console.log(swiper.currentIndex);
+
+//   $(".swiper-slide-active .section__title").addClass("slide_out");
+
+//   setTimeout(() => {
+//     $(".swiper-slide-active .section__title").removeClass("slide_out");
+//     swiper.slidePrev();
+//   }, 750);
+// });
+
+handleSwiperNavigation = (direction) => {
+  $(".swiper-slide-active .section__title").addClass("content_slide_out");
+  setTimeout(() => {
+    $(".swiper-slide-active .section__title").removeClass("content_slide_out");
+    if (direction === "next") {
+      swiper.slideNext();
+    } else if (direction === "prev") {
+      swiper.slidePrev();
+    }
+  }, 750);
+};
+
+window.onscroll = () => {
   navToggle
     .addClass(window.scrollY > 0 ? "nav_dark-text" : "nav_light-text")
     .removeClass(window.scrollY > 0 ? "nav_light-text" : "nav_dark-text");
@@ -75,3 +135,6 @@ themeToggle.click(() => {
 
 openNavItem.on("click", () => toggleNavigation(true));
 navClose.on("click", () => toggleNavigation(false));
+
+swiperNextButton.click(() => handleSwiperNavigation("next"));
+swiperPrevButton.click(() => handleSwiperNavigation("prev"));
