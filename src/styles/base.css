@@ -1,0 +1,106 @@
+.dark-theme {
+  --body-bg: #eae3d1;
+  --text: #324b44;
+  --card-bg: #324b44;
+  --card-text: #eae3d1;
+  --navbar-item-unhover: #eae3d1;
+  --navbar-item-hover: #324b44;
+  --navbar-item-bg-hover: #eae3d1;
+  --navigation-icon: #324b44;
+  --overlay-opacity: 0.85;
+}
+
+:root {
+  --body-bg: #324b44;
+  --text: #eae3d1;
+  --card-bg: #eae3d1;
+  --card-text: #324b44;
+  --navbar-item-unhover: #324b44;
+  --navbar-item-hover: #324b44;
+  --navbar-item-bg-hover: #eae3d1;
+  --overlay-opacity: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Fagun Light";
+  margin: 0 auto;
+  word-spacing: 1rem;
+  transition: all 1s ease-in-out;
+  background-color: var(--body-bg);
+}
+
+section {
+  width: 100%;
+  height: 100dvh !important;
+  overflow: hidden !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-bold {
+  font-weight: 600;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.section__title {
+  font-family: "Fagun Light";
+  font-size: 3rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--text);
+  opacity: 1;
+}
+
+.section__subtitle {
+  font-family: "Adobe Handwriting Ernie";
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: var(--text);
+  text-shadow: 1px 1px 30px var(--card-bg);
+}
+
+.btn {
+  background: var(--text);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 2rem;
+  transition: all 0.2s ease-in;
+  color: var(--body-bg) !important;
+}
+
+.btn-primary {
+  background: transparent;
+  border: 1.5px solid var(--text);
+  color: var(--text) !important;
+}
+
+.btn-primary:hover {
+  background: var(--text);
+  color: var(--body-bg) !important;
+}
