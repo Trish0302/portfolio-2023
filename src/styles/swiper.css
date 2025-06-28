@@ -1,0 +1,111 @@
+
+
+.swiper-pagination {
+  position: absolute;
+  z-index: 400 !important;
+  width: 50% !important;
+}
+
+.swiper-pagination-bullet {
+  background: #588157;
+  z-index: 400 !important;
+}
+
+.swiper-pagination-bullet::after {
+  content: "...";
+  color: white;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+  z-index: 100;
+}
+
+.swiper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.swiper-slide_bg {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+  height: auto;
+  width: 100%;
+  max-width: 1500px;
+  overflow-x: hidden;
+}
+
+.swiper-slide {
+  opacity: 0;
+  transform: translate(0) !important;
+  padding: 0 2.5rem;
+}
+
+.swiper-slide-active {
+  transition: all 2s ease;
+  transition-delay: 300ms;
+  opacity: 1;
+}
+
+.swiper-slide-active .section__title.content-animation {
+  opacity: 1;
+  animation: activeText 1.5s ease-in-out !important;
+}
+
+.swiper-slide-active .section__title.content_slide_out {
+  animation: contentSlideOut 1.5s ease-in-out !important;
+}
+
+/* Slider buttons */
+.slider-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 200;
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.slider-button i {
+  font-size: 1.5rem;
+  color: var(--text);
+}
+
+.slider-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#slider-button-left {
+  left: 2.5rem;
+}
+
+#slider-button-right {
+  right: 2.5rem;
+}
+
+/* Animation classes for swiper slides */
+.swiper-slide-active .section__title.content-animation {
+  opacity: 1;
+  animation: activeText 1.5s ease-in-out !important;
+}
+
+.swiper-slide-active .section__title.content_slide_out {
+  animation: contentSlideOut 1.5s ease-in-out !important;
+}

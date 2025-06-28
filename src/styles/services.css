@@ -1,0 +1,22 @@
+
+.services {
+  border-radius: 0.75rem;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: max-content !important;
+  padding-bottom: 64px !important;
+  -webkit-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
+  position: relative;
+}
+
+.swiper-pagination {
+  width: 50% !important;
+}
+
+.swiper-pagination-bullet {
+  background: #588157;
+  z-index: 400 !important;
+}

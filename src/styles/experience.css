@@ -1,0 +1,66 @@
+
+.experience__wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+.experience__wrapper > div.experience_content_experience {
+  flex: 55%;
+}
+
+.experience__wrapper > div.experience_content_education {
+  flex: 45%;
+}
+
+.experience_content_title {
+  font-family: "Romans Story";
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+ul#progress > li {
+  position: relative;
+  z-index: 100;
+}
+
+ul#progress > li > .node {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+ul#progress > li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1.15rem;
+  width: 3px;
+  height: 100%;
+  background: var(--card-bg);
+  z-index: -2;
+}
+
+ul#progress > li > .node > img {
+  position: relative;
+  background-color: var(--body-bg);
+}
+
+ul#progress > li > p {
+  display: inline-block;
+  margin-left: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--text);
+}
+
+.experience_content_education {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+}
+
+.experience_content_education > div > span {
+  color: var(--text);
+}

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+@font-face {
+  font-family: "Fagun Light";
+  src: url("/assets/fonts/Fagun-Light.eot"),
+    url("/assets/fonts/Fagun-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Romans Story";
+  src: url("/assets/fonts/Romans Story.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Adobe Handwriting Ernie";
+  src: local("Adobe Handwriting Ernie"), local("Adobe-Handwriting-Ernie"),
+    url("/assets/fonts/AdobeHandwriting-Ernie.woff2") format("woff2"),
+    url("/assets/fonts/AdobeHandwriting-Ernie.woff") format("woff"),
+    url("/assets/fonts/AdobeHandwriting-Ernie.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

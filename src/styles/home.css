@@ -1,0 +1,89 @@
+.home {
+  border-bottom: 1px solid var(--text);
+  height: calc(100vh);
+  padding: 0 2.5rem;
+}
+
+.home_buttons {
+  z-index: 200;
+  display: flex;
+  gap: 1rem;
+}
+
+.home__container {
+  display: flex;
+  column-gap: 7rem;
+  height: 100%;
+}
+
+.home__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  row-gap: 1rem;
+}
+
+.home__content_job_tags {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  margin-bottom: 0.75rem;
+  z-index: 100;
+}
+
+.home__content_job_tags p {
+  font-size: 0.75rem;
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  padding: 0.75rem 2rem;
+  border-radius: 0.65rem;
+  word-spacing: 0.25rem;
+}
+
+.home__content-name {
+  font-size: 4.5rem;
+  text-transform: uppercase;
+  font-family: "Romans Story";
+  color: var(--text);
+}
+
+.home__content-description {
+  font-size: 0.9rem;
+  line-height: 1.75rem;
+  word-spacing: 0.5rem;
+  color: var(--text);
+}
+
+.home__socials-icon > i {
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  border: 1.5px solid var(--card-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: var(--card-bg);
+}
+
+.home__img {
+  flex: 0 0 28rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.home__img img {
+  width: 30%;
+  height: auto;
+  border-radius: 40% 60% 33% 67% / 57% 50% 50% 43%;
+  background-image: linear-gradient(
+    to left bottom,
+    #588157,
+    #7e956e,
+    #a1aa8a,
+    #c0bfaa,
+    #dad7cd
+  );
+}
