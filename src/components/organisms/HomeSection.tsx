@@ -1,8 +1,9 @@
 import React from 'react';
+import "./../../styles/home.css";
 
 const HomeSection = () => {
   return (
-    <section className="home section" id="home">
+    <section className="home section">
       <div className="home__container">
         <div className="home__content">
           <div className="home__content_job_tags">

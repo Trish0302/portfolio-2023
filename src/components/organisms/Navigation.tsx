@@ -1,5 +1,6 @@
-import { useEffect } from 'react';
-import NavItem from '../molecules/NavItem';
+import { useEffect, useState } from "react";
+import NavItem from "../molecules/NavItem";
+import "./../../styles/navigation.css";
 
 interface NavigationProps {
   activeSection: number;
@@ -15,7 +16,7 @@ const Navigation = ({
   onToggleTheme,
   isDarkTheme,
   isMenuOpen,
-  onToggleMenu
+  onToggleMenu,
 }: NavigationProps) => {
 
   const handleMenuToggle = () => {
@@ -27,15 +28,19 @@ const Navigation = ({
   };
 
   useEffect(() => {
-    const navMenu = document.querySelector('.nav__menu');
-    const navOverlay = document.querySelector('.nav__overlay');
-    
+
+    const navMenu = document.querySelector(".nav__menu");
+    const navOverlay = document.querySelector(".nav__overlay");
+
     if (isMenuOpen) {
-      navMenu?.classList.add('show-menu');
-      navOverlay?.classList.add('show-overlay');
+      navMenu?.classList.add("show-menu");
+      navOverlay?.classList.add("show-overlay");
+      console.log(123);
+      
     } else {
-      navMenu?.classList.remove('show-menu');
-      navOverlay?.classList.remove('show-overlay');
+      navMenu?.classList.remove("show-menu");
+      navOverlay?.classList.remove("show-overlay");
+      // navClose?.classList.remove("hidden");
     }
   }, [isMenuOpen]);
 
@@ -47,13 +52,16 @@ const Navigation = ({
   return (
     <header className="header content-center relative" id="header">
       <nav className="nav flex justify-between items-center">
-        <a href="#" id="nav__logo" className="z-300">Trish Lee</a>
-        <div className="nav__menu">
-          <div className="nav__close-btn" onClick={handleCloseMenu}>
-            <i className="ri-close-line"></i>
-          </div>
+        <a href="#" id="nav__logo" className="">
+          Trish Lee
+        </a>
 
-          <ul className="nav__list">
+        <div className="nav__menu">
+          {/* <div className="nav__close-btn" onClick={handleCloseMenu}>
+            <i className="ri-close-line"></i>
+          </div> */}
+
+          <ul className="nav__list !flex !flex-col !items-center gap-5">
             <NavItem
               id={0}
               title="Home"
@@ -92,19 +100,19 @@ const Navigation = ({
           </ul>
         </div>
 
-        <div className="nav__buttons z-300">
-          <i className="ri-moon-line change-theme" id="theme-button"></i>
+        <div className="nav__buttons">
+          {/* <div className="nav__overlay" onClick={handleCloseMenu}></div> */}
 
-          <div className="nav__overlay" onClick={handleCloseMenu}></div>
+          <div className="change-theme" onClick={onToggleTheme}>
+            <i className={isDarkTheme ? "ri-sun-line" : "ri-moon-line"}></i>
+          </div>
 
-          <div className="nav__btns">
-            <div className="menu-toggle" onClick={handleMenuToggle}>
-              <i className="ri-menu-4-line"></i>
-            </div>
+          <div className={`menu-toggle ${isMenuOpen ? "hidden" : ""}`} onClick={handleMenuToggle}>
+            <i className="ri-menu-4-line"></i>
+          </div>
 
-            <div className="change-theme" onClick={onToggleTheme}>
-              <i className={isDarkTheme ? "ri-sun-line" : "ri-moon-line"}></i>
-            </div>
+          <div className={`nav__close ${isMenuOpen ? "" : "hidden"}`} onClick={handleCloseMenu}>
+            <i className="ri-close-line"></i>
           </div>
         </div>
       </nav>
