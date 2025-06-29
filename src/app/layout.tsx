@@ -31,7 +31,7 @@ export default function RootLayout({
         {/* CSS imports moved to top-level imports */}
         {/* Tailwind CSS is already included via PostCSS */}
       </head>
-      <body className="overflow-x-hidden">
+      <body className="overflow-hidden !h-screen">
         {children}
         <Script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" />
         {/* jQuery removed - using React hooks instead */}

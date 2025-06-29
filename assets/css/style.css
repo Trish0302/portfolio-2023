@@ -199,7 +199,7 @@ section {
   top: 0;
   left: 0;
   width: 100% !important;
-  height: 100vh;
+  height: 100dvh;
   flex-direction: column;
   background-color: white;
   justify-content: center;
